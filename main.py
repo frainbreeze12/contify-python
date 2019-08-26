@@ -29,20 +29,7 @@ VAR_LINKS = '{{VAR_LINKS}}'
 VAR_TIME = '{{VAR_TIME}}'
 links = ""
 
-heiseLinks = []
-heiseTitle = []
-golemLinks = []
-golemTitle = []
-t3nLinks = []
-t3nTitle = []
-spiegelLinks = []
-spiegelTitle = []
-weltLinks = []
-weltTitle = []
-biLinks = []
-biTitle = []
-netzweltLinks = []
-netzweltTitle = []
+allStuff = [[] for _ in range(14)]
 
 #removing summary.csv if exists
 if os.path.exists("resources/summary.csv"):
@@ -56,53 +43,48 @@ else:
 print("Getting links from Heise")
 for link in heiseSoup.find_all('a', class_={'archiv-liste__text'}, limit=5):
     if urlparse(link.get('href')).hostname == "www.techstage.de":
-        heiseLinks.append("'" + link.get('href') + "'")
+        allStuff[0].append("'" + link.get('href') + "'")
     else:    
-        heiseLinks.append("'https://www.heise.de" + link.get('href') + "'")
-    heiseTitle.append(link.get('title'))
+        allStuff[0].append("'https://www.heise.de" + link.get('href') + "'")
+    allStuff[1].append(link.get('title'))
 
 print("Getting links from Golem")
 golemResult = golemSoup.select('.list-articles li', limit=5)
 for article in golemResult:
-    golemLinks.append("'" + article.select('a')[0].get('href') + "'")
-    golemTitle.append(article.select('a')[0].get('title'))
+    allStuff[2].append("'" + article.select('a')[0].get('href') + "'")
+    allStuff[3].append(article.select('a')[0].get('title'))
 
 print("Getting links from t3n")
 for article in t3nSoup.find_all('a', class_={'c-newslist__link'}, limit=5):
-    t3nLinks.append("'" + article.get('href') + "'")
-    t3nTitle.append(article.get_text())
+    allStuff[4].append("'" + article.get('href') + "'")
+    allStuff[5].append(article.get_text())
 
 print("Getting links from Spiegel")
 spiegelResult = spiegelSoup.select('.schlagzeilen-content a', limit=5)
 for article in spiegelResult:
-    spiegelLinks.append("'https://www.spiegel.de" + article.get('href') + "'")
-    spiegelTitle.append(article.get('title'))
+    allStuff[6].append("'https://www.spiegel.de" + article.get('href') + "'")
+    allStuff[7].append(article.get('title'))
 
 print("Getting links from Welt")
 for article in weltSoup.find_all('a', class_={'o-teaser__link--is-headline'}, limit=5):
-    weltLinks.append("'https://www.welt.de" + article.get('href') + "'")
-    weltTitle.append(article.get('title'))
+    allStuff[8].append("'https://www.welt.de" + article.get('href') + "'")
+    allStuff[9].append(article.get('title'))
 
 print("Getting links from Business Insider")
 for article in biSoup.find_all('a', class_={'title'}, limit=5):
-    biLinks.append("'" + article.get('href') + "'")
-    biTitle.append(article.get_text())
+    allStuff[10].append("'" + article.get('href') + "'")
+    allStuff[11].append(article.get_text())
 
 print("Getting links from netzwelt")
 for article in netzweltSoup.find_all('a', class_={'cl-ap'}, limit=5):
-    netzweltLinks.append("'" + article.get('href') + "'")
-    netzweltTitle.append(article.get('title'))
+    allStuff[12].append("'" + article.get('href') + "'")
+    allStuff[13].append(article.get('title'))
 
 
 #adding links to summary.csv
 print("Writing links to summary.csv")
-write_to_csv(heiseLinks, heiseTitle)
-write_to_csv(golemLinks, golemTitle)
-write_to_csv(t3nLinks, t3nTitle)
-write_to_csv(spiegelLinks, spiegelTitle)
-write_to_csv(weltLinks, weltTitle)
-write_to_csv(biLinks, biTitle)
-write_to_csv(netzweltLinks, netzweltTitle)
+write_to_csv(allStuff)
+
 
 #adding links to the template file
 content = content.replace(VAR_LINKS, create_links())

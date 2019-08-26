@@ -1,2 +1,3 @@
-*/resources
-*/.vscode
+**/resources
+**/.vscode
+**/web/summary.html
