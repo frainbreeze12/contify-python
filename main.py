@@ -62,7 +62,10 @@ for article in t3nSoup.find_all('a', class_={'c-newslist__link'}, limit=5):
 print("Getting links from Spiegel")
 spiegelResult = spiegelSoup.select('.schlagzeilen-content a', limit=5)
 for article in spiegelResult:
-    allStuff[6].append("'https://www.spiegel.de" + article.get('href') + "'")
+    if urlparse(article.get('href')).hostname == "www.spiegel.de":
+        allStuff[6].append("'" + article.get('href') + "'")
+    else:    
+        allStuff[6].append("'https://www.spiegel.de" + article.get('href') + "'")
     allStuff[7].append(article.get('title'))
 
 print("Getting links from Welt")
