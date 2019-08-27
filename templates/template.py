@@ -7,12 +7,12 @@ TEMPLATE = """
   <title>Contify</title>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
   <nav class="blue darken-2">
     <div class="nav-wrapper space">
-      <a href="#" class="brand-logo"><img src="assets/img/logo-white.png" class="logo-img"></a>
+      <a href="#" class="brand-logo"><img src="static/img/logo-white.png" class="logo-img"></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>Letzte Aktualisierung: {{VAR_TIME}}</li>
       </ul>

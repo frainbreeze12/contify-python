@@ -1,4 +1,6 @@
 import requests
+from flask import Flask
+from flask import render_template
 import time
 import csv
 import os
@@ -8,6 +10,8 @@ from create_links import create_links
 from write_to_csv import write_to_csv
 from urllib.parse import urlparse
 from datetime import datetime
+
+app = Flask(__name__)
 
 heise = requests.get("https://www.heise.de/newsticker")
 heiseSoup = BeautifulSoup(heise.content, 'html.parser')
@@ -94,6 +98,10 @@ content = content.replace(VAR_LINKS, create_links())
 content = content.replace(VAR_TIME, datetime.now().strftime('%d.%m.%y %H:%M:%S'))
 
 #write data into the final html file
-with open('web/summary.html', "w", encoding='utf-8') as summary:
+with open('templates/summary.html', "w", encoding='utf-8') as summary:
     print("Writing links to summary.html")
     summary.write(content)
+
+@app.route('/')
+def index():
+    return render_template('summary.html')
