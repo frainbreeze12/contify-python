@@ -104,4 +104,4 @@ with open('templates/summary.html', "w", encoding='utf-8') as summary:
 
 @app.route('/')
 def index():
-    return render_template('summary.html')
+    return ('Hallo Heroku')
