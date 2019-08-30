@@ -1,5 +1,4 @@
 APScheduler==3.6.1
-astroid==2.2.5
 beautifulsoup4==4.8.0
 certifi==2019.6.16
 chardet==3.0.4
@@ -14,7 +13,6 @@ Jinja2==2.10.1
 lazy-object-proxy==1.4.2
 MarkupSafe==1.1.1
 mccabe==0.6.1
-pylint==2.3.1
 pytz==2019.2
 requests==2.22.0
 six==1.12.0
