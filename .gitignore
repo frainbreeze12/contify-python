@@ -1,3 +1,6 @@
 **/.vscode
 **/env
 **/__pycache__
+contify.conf
+**/summary.html
+**/summary.csv

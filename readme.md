@@ -3,5 +3,7 @@ Ein Python Content-Aggregator für Deutsche News Seiten.
 
 ```bash
 virtualenv env
-env\Scripts\activate
+source env\Scripts\activate
+pip install -r requirements.txt
 ```
+
