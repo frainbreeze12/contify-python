@@ -24,7 +24,7 @@ def create_links():
         i = 1
         while i <= lenList:
             if i == 1:
-                links += '<div class="col s12 m6 xl4">\n<ul class="collection with-header z-depth-1">\n'
+                links += '<div class="col s12 m6 xl4">\n<ul class="collection with-header z-depth-1 hoverable">\n'
                 if urlparse(splitLinks[i-1].strip("'")).hostname == "www.techstage.de":
                     links += '<li class="collection-header"> <h5>www.heise.de</h5></li>'
                 else:    
@@ -38,7 +38,7 @@ def create_links():
             elif i % 5 == 0:
                 links += '<li class="collection-item truncate"><a href=' + splitLinks[i-1].strip() + '>' + splitTitle[i-1].strip() + '</a></li>\n'
                 links += '</ul>\n</div>\n'
-                links += '<div class="col s12 m6 xl4">\n<ul class="collection with-header z-depth-1">\n'
+                links += '<div class="col s12 m6 xl4">\n<ul class="collection with-header z-depth-1 hoverable">\n'
                 links += '<li class="collection-header"> <h5>' + urlparse(splitLinks[i].strip("'")).hostname + ' </h5></li>\n'
                 i += 1
             else:

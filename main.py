@@ -29,7 +29,6 @@ def do_magic():
 
     content = TEMPLATE
     VAR_LINKS = '{{VAR_LINKS}}'
-    VAR_TIME = '{{VAR_TIME}}'
 
     allStuff = [[] for _ in range(14)]
 
@@ -93,7 +92,6 @@ def do_magic():
 
     #adding links to the template file
     content = content.replace(VAR_LINKS, create_links())
-    content = content.replace(VAR_TIME, datetime.now().strftime('%d.%m.%y %H:%M:%S'))
 
     #write data into the final html file
     with open('templates/summary.html', "w", encoding='utf-8') as summary:

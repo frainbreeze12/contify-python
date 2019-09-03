@@ -9,4 +9,8 @@ do_magic()
 
 @app.route('/')
 def index():
-    return render_template("summary.html")
+    return render_template("summary.html")  
+
+@app.route('/quellen')
+def quellen():
+    return render_template("source.html")
