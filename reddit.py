@@ -2,7 +2,9 @@ import feedparser
 
 def get_rss():
     content = ""
-    redditList = ("http://www.reddit.com/r/news/.rss", "http://www.reddit.com/r/technology/.rss")
+    redditList = ("http://www.reddit.com/r/news/.rss", "http://www.reddit.com/r/technology/.rss", "http://www.reddit.com/r/worldnews/.rss",
+                  "http://www.reddit.com/r/gaming/.rss", "http://www.reddit.com/r/Showerthoughts/.rss", "http://www.reddit.com/r/hongkong/.rss",
+                  "http://www.reddit.com/r/europe/.rss", "http://www.reddit.com/r/dankmemes/.rss", "http://www.reddit.com/r/KidsAreFuckingStupid/.rss")
 
     for sub in redditList:
         d = feedparser.parse(sub)
