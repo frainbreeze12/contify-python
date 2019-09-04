@@ -7,7 +7,6 @@ from templates.template import TEMPLATE
 from create_links import create_links
 from write_to_csv import write_to_csv
 from urllib.parse import urlparse
-from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
 
 def do_magic():
@@ -76,7 +75,7 @@ def do_magic():
         allStuff[13].append(article.get('title'))
 
     #adding links to summary.csv
-    write_to_csv(allStuff)
+    write_to_csv(allStuff, "summary")
 
     #adding links to the template file
     content = content.replace(VAR_LINKS, create_links())
