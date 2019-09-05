@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contify</title>
-  <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <script src="https://kit.fontawesome.com/7e6a7098f8.js"></script>
-  <link rel="stylesheet" href="static/css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <title>Contify</title>
+    <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://kit.fontawesome.com/7e6a7098f8.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
     <nav>
         <div class="nav-wrapper space">
         <a href="/" class="brand-logo"><img src="static/img/logo-white.png" class="logo-img"></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
             <li><a href="/quellen">Quellen</a></li>
             <li><a href="/subreddit">Subreddit stuff</a></li>
-            <li>
-                <div class="switch space">
-                    <label>
-                      Light
-                      <input id="themeSwitch" type="checkbox">
-                      <span class="lever"></span>
-                      Dark
-                    </label>
-                  </div>
-            </li>
         </ul>
         </div>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="/quellen">Quellen</a></li>
+            <li><a href="/subreddit">Subreddit stuff</a></li>
+          </ul>
     </nav>
 
     <main>
@@ -39,7 +37,14 @@
     <footer class="page-footer">
         <div class="row space">
         <span class="col-s-4">Made by Marvin Dobslaw</span>
-        <a class="grey-text text-lighten-4 right" href="https://www.instagram.com/3d_dobby/?hl=de">W.I.P</a>
+        <div class="switch space light right">
+            <label>
+                Light
+                <input id="themeSwitch" type="checkbox">
+                <span class="lever"></span>
+                Dark
+            </label>
+        </div>
         </div>
     </footer>
   
