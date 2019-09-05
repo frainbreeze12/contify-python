@@ -7,9 +7,7 @@ from templates.template import TEMPLATE
 from create_links import create_links
 from write_to_csv import write_to_csv
 from urllib.parse import urlparse
-from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
-
 
 def do_magic():
     heise = requests.get("https://www.heise.de/newsticker")
@@ -29,7 +27,6 @@ def do_magic():
 
     content = TEMPLATE
     VAR_LINKS = '{{VAR_LINKS}}'
-    VAR_TIME = '{{VAR_TIME}}'
 
     allStuff = [[] for _ in range(14)]
 
@@ -40,9 +37,7 @@ def do_magic():
     else:
         print("Summary.csv does currently no exist")
 
-
     #getting all the content
-    print("Getting links from Heise")
     for link in heiseSoup.find_all('a', class_={'archiv-liste__text'}, limit=5):
         if urlparse(link.get('href')).hostname == "www.techstage.de":
             allStuff[0].append("'" + link.get('href') + "'")
@@ -50,18 +45,15 @@ def do_magic():
             allStuff[0].append("'https://www.heise.de" + link.get('href') + "'")
         allStuff[1].append(link.get('title'))
 
-    print("Getting links from Golem")
     golemResult = golemSoup.select('.list-articles li', limit=5)
     for article in golemResult:
         allStuff[2].append("'" + article.select('a')[0].get('href') + "'")
         allStuff[3].append(article.select('a')[0].get('title'))
 
-    print("Getting links from t3n")
     for article in t3nSoup.find_all('a', class_={'c-newslist__link'}, limit=5):
         allStuff[4].append("'" + article.get('href') + "'")
         allStuff[5].append(article.get_text())
 
-    print("Getting links from Spiegel")
     spiegelResult = spiegelSoup.select('.schlagzeilen-content a', limit=5)
     for article in spiegelResult:
         if urlparse(article.get('href')).hostname == "www.spiegel.de":
@@ -70,34 +62,27 @@ def do_magic():
             allStuff[6].append("'https://www.spiegel.de" + article.get('href') + "'")
         allStuff[7].append(article.get('title'))
 
-    print("Getting links from Welt")
     for article in weltSoup.find_all('a', class_={'o-teaser__link--is-headline'}, limit=5):
         allStuff[8].append("'https://www.welt.de" + article.get('href') + "'")
         allStuff[9].append(article.get('title'))
 
-    print("Getting links from Business Insider")
     for article in biSoup.find_all('a', class_={'title'}, limit=5):
         allStuff[10].append("'" + article.get('href') + "'")
         allStuff[11].append(article.get_text())
 
-    print("Getting links from netzwelt")
     for article in netzweltSoup.find_all('a', class_={'cl-ap'}, limit=5):
         allStuff[12].append("'" + article.get('href') + "'")
         allStuff[13].append(article.get('title'))
 
-
     #adding links to summary.csv
-    print("Writing links to summary.csv")
-    write_to_csv(allStuff)
-
+    write_to_csv(allStuff, "summary")
 
     #adding links to the template file
     content = content.replace(VAR_LINKS, create_links())
-    content = content.replace(VAR_TIME, datetime.now().strftime('%d.%m.%y %H:%M:%S'))
 
     #write data into the final html file
     with open('templates/summary.html', "w", encoding='utf-8') as summary:
-        print("Writing links to summary.html")
+        print("Update Successful")
         summary.write(content)
 
 sched = BackgroundScheduler()
