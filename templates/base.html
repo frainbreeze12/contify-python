@@ -10,12 +10,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-    <nav class="blue darken-2">
+    <nav>
         <div class="nav-wrapper space">
         <a href="/" class="brand-logo"><img src="static/img/logo-white.png" class="logo-img"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/quellen">Quellen</a></li>
             <li><a href="/subreddit">Subreddit stuff</a></li>
+            <li>
+                <div class="switch space">
+                    <label>
+                      Light
+                      <input id="themeSwitch" type="checkbox">
+                      <span class="lever"></span>
+                      Dark
+                    </label>
+                  </div>
+            </li>
         </ul>
         </div>
     </nav>
@@ -26,7 +36,7 @@
     </main>
 
 
-    <footer class="page-footer blue darken-2">
+    <footer class="page-footer">
         <div class="row space">
         <span class="col-s-4">Made by Marvin Dobslaw</span>
         <a class="grey-text text-lighten-4 right" href="https://www.instagram.com/3d_dobby/?hl=de">W.I.P</a>
@@ -35,5 +45,6 @@
   
   <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="static/js/main.js"></script>
 </body>
 </html>
