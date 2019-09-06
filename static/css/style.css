@@ -9,13 +9,13 @@
   --light-border: 1px solid #eeeeee;
 
   /* Dark Theme */
-  --dark-background: #37474f ;
-  --dark-site-bg: #263238;
-  --dark-link-text: #f5f5f5;
-  --dark-link-text-hover: #bdbdbd;
-  --dark-panel-bg: #37474f ;
-  --dark-text: white;
-  --dark-border: 1px solid #424242;
+  --dark-site-bg: #1A1C20;
+  --dark-nav-footer: #141414;
+  --dark-link-text: #b2b6b9;
+  --dark-link-text-hover: #D9DADA;
+  --dark-panel-bg: #1A1C20;
+  --dark-text: #b2b6b9;
+  --dark-border: 1px solid #191919;
 }
 
 body {
@@ -52,10 +52,10 @@ footer{
 }
 
 .switch label input[type=checkbox]:checked+.lever:after {
-  background-color: #607d8b !important;
+  background-color: #37474f !important;
 }
 .switch label input[type=checkbox]:checked+.lever {
-  background-color: #607d8b !important;
+  background-color: #37474f !important;
 }
 
 ul.collection{
@@ -83,7 +83,7 @@ ul.collection{
 
 [data-theme="dark"]{
   --site-bg: var(--dark-site-bg);
-  --nav-footer: var(--dark-background);
+  --nav-footer: var(--dark-nav-footer);
   --light-link-text: var(--dark-link-text);
   --light-link-text-hover: var(--dark-link-text-hover);
   --light-panel-bg: var(--dark-panel-bg);
