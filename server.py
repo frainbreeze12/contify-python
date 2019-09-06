@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import Markup
+from main import do_magic
 from reddit import get_rss
 
 app = Flask(__name__)
