@@ -21,6 +21,8 @@ def get_rss():
             limit+=1
         content += '</ul></div>'
 
+    print("Reddit.rss: successful")
+
     return content
 
 sched = BackgroundScheduler()
