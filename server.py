@@ -1,13 +1,11 @@
 from flask import Flask
 from flask import render_template
 from flask import Markup
-from main import do_magic
 from reddit import get_rss
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-do_magic()
 content = Markup(get_rss())
 
 @app.route('/')

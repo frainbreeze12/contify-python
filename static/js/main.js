@@ -1,10 +1,5 @@
 M.AutoInit();
 
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.sidenav');
-  var instances = M.Sidenav.init(elems, options);
-});
-
 var themeSwitch = document.getElementById('themeSwitch');
 if(themeSwitch) {
   initTheme(); // on page load, if user has already selected a specific theme -> apply it
