@@ -86,5 +86,5 @@ def do_magic():
         summary.write(content)
 
 sched = BackgroundScheduler()
-sched.add_job(do_magic, 'interval', minutes=1)
+sched.add_job(do_magic, 'interval', minutes=5)
 sched.start()
