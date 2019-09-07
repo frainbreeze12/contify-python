@@ -7,6 +7,9 @@ from reddit import get_rss
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
+do_magic()
+get_rss()
+
 @app.route('/')
 def index():
     return render_template("summary.html")
