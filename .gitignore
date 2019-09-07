@@ -3,4 +3,5 @@
 **/__pycache__
 contify.conf
 **/templates/summary.html
+**/templates/subreddit.html
 **/resources/summary.csv
