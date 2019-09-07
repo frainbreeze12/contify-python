@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Contify</title>
-    <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="static/img/favicon.ico"
+    />
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <script src="https://kit.fontawesome.com/7e6a7098f8.js"></script>
-    <link rel="stylesheet" href="static/css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-<body>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
     <nav>
-        <div class="nav-wrapper space">
-        <a href="/" class="brand-logo"><img src="static/img/logo-white.png" class="logo-img"></a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <div class="nav-wrapper space">
+        <a href="/" class="brand-logo"
+          ><img src="static/img/logo-white.png" class="logo-img"
+        /></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
         <ul class="right hide-on-med-and-down">
-            <li><a href="/quellen">Quellen</a></li>
-            <li><a href="/subreddit">Subreddit stuff</a></li>
+          <li><a href="/">Startseite</a></li>
+          <li class="disabled"><a href="/wirtschaft">Wirtschaft</a></li>
+          <li class="disabled"><a href="/politik">Politik</a></li>
+          <li class="disabled"><a href="/technologie">Technologie</a></li>
+          <li><a href="/subreddit">Subreddits</a></li>
         </ul>
-        </div>
+      </div>
 
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="/quellen">Quellen</a></li>
-            <li><a href="/subreddit">Subreddit stuff</a></li>
-          </ul>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="/">Startseite</a></li>
+        <li class="disabled"><a href="/wirtschaft">Wirtschaft</a></li>
+        <li class="disabled"><a href="/politik">Politik</a></li>
+        <li class="disabled"><a href="/technologie">Technologie</a></li>
+        <li><a href="/subreddit">Subreddits</a></li>
+      </ul>
     </nav>
 
     <main>
-        {% block main %}
-        {% endblock%}
+      {% block main %} {% endblock%}
     </main>
 
-
     <footer class="page-footer">
-        <div class="row space">
+      <div class="row space">
         <span class="col-s-4">Made by Marvin Dobslaw</span>
         <div class="switch space light right">
-            <label>
-                Light
-                <input id="themeSwitch" type="checkbox">
-                <span class="lever"></span>
-                Dark
-            </label>
+          <label>
+            Light
+            <input id="themeSwitch" type="checkbox" />
+            <span class="lever"></span>
+            Dark
+          </label>
         </div>
-        </div>
+      </div>
     </footer>
-  
-  <!-- Compiled and minified JavaScript -->
+
+    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="static/js/main.js"></script>
-</body>
+  </body>
 </html>
