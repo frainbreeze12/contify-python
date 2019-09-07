@@ -1,5 +1,5 @@
 import feedparser
-from templates.template_subreddit import TEMPLATE
+from templates.template import TEMPLATE
 from apscheduler.schedulers.background import BackgroundScheduler
 
 content = TEMPLATE
