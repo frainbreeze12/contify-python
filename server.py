@@ -2,15 +2,13 @@ from flask import Flask
 from flask import render_template
 from flask import Markup
 from main import do_magic
-from reddit import get_rss
-from security import get_sec_rss
+from rss_links import rss_links
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 do_magic()
-get_rss()
-get_sec_rss()
+rss_links()
 
 @app.route('/')
 def index():
