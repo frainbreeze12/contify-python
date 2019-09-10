@@ -22,9 +22,9 @@ def wirtschaft():
 def politik():
     return render_template("politik.html")
 
-@app.route('/technologie')
+@app.route('/tech&science')
 def technologie():
-    return render_template("technologie.html")
+    return render_template("technology.html")
 
 @app.route('/security')
 def security():
