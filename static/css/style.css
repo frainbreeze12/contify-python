@@ -71,6 +71,7 @@ ul.collection{
 .collection-item{
   background-color: var(--light-panel-bg)!important;
   border: var(--light-border)!important;
+  height: 44px;
 }
 
 .collection-item a{
