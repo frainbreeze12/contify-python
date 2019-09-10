@@ -12,11 +12,11 @@ def rss_links():
                     "http://www.reddit.com/r/Showerthoughts/.rss", "http://www.reddit.com/r/KidsAreFuckingStupid/.rss", "http://www.reddit.com/r/dankmemes/.rss")
 
     tech_links = ("https://www.heise.de/rss/heise-top-atom.xml", "https://rss.golem.de/rss.php?feed=ATOM1.0", "https://news.ycombinator.com/rss",
-                  "https://www.nytimes.com/svc/collections/v1/publish/http://www.nytimes.com/section/science/rss.xml")
+                  "https://www.eff.org/rss/updates.xml", "https://www.techrepublic.com/rssfeeds/articles/", "https://www.nytimes.com/svc/collections/v1/publish/http://www.nytimes.com/section/science/rss.xml")
 
     get_rss(tech_links, "technology")
-"""     get_rss(security_links, "security")
-    get_rss(reddit_links, "subreddit") """
+    get_rss(security_links, "security")
+    get_rss(reddit_links, "subreddit")
 
 
 sched = BackgroundScheduler()
