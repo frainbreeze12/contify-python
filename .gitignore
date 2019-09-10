@@ -5,4 +5,5 @@ contify.conf
 **/templates/summary.html
 **/templates/security.html
 **/templates/subreddit.html
+**/templates/technology.html
 **/resources/summary.csv
