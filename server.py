@@ -7,20 +7,20 @@ from rss_links import rss_links
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-do_magic()
+""" do_magic() """
 rss_links()
 
 @app.route('/')
 def index():
     return render_template("summary.html")
 
-@app.route('/wirtschaft')
+@app.route('/economy')
 def wirtschaft():
-    return render_template("wirtschaft.html")
+    return render_template("economy.html")
 
-@app.route('/politik')
+@app.route('/politics')
 def politik():
-    return render_template("politik.html")
+    return render_template("politics.html")
 
 @app.route('/tech&science')
 def technologie():
