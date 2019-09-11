@@ -7,7 +7,7 @@ from rss_links import rss_links
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-""" do_magic() """
+do_magic()
 rss_links()
 
 @app.route('/')

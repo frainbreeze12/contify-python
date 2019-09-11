@@ -3,8 +3,8 @@ Contify is a content aggregator for news, subreddits and more.
 
 ## To do
 * Startseite hinzufügen
-* Mehr Content und News
-* Wirtschaft, Politik und Technologie füllen
+* **More Content needed**
+* ~~Wirtschaft, Politik und Technologie füllen~~
 * Analytics
 * ...
 
