@@ -4,6 +4,7 @@
   --nav-footer: #1976d2;
   --light-link-text: #039be5;
   --light-link-text-hover: #90caf9;
+  --light-link-text-visited: #a8d6fa;
   --light-panel-bg: #FFFFFF;
   --light-text: black;
   --light-border: 1px solid #eeeeee;
@@ -13,6 +14,7 @@
   --dark-nav-footer: #141414;
   --dark-link-text: #b2b6b9;
   --dark-link-text-hover: #D9DADA;
+  --dark-link-text-visited: #4c5053;
   --dark-panel-bg: #25282e;
   --dark-text: #b2b6b9;
   --dark-border: 1px solid #191919;
@@ -78,6 +80,10 @@ ul.collection{
   color: var(--light-link-text);
 }
 
+.collection-item a:visited{
+  color: var(--light-link-text-visited);
+}
+
 .collection-item a:hover{
   color: var(--light-link-text-hover);
 }
@@ -87,6 +93,7 @@ ul.collection{
   --nav-footer: var(--dark-nav-footer);
   --light-link-text: var(--dark-link-text);
   --light-link-text-hover: var(--dark-link-text-hover);
+  --light-link-text-visited: var(--dark-link-text-visited);
   --light-panel-bg: var(--dark-panel-bg);
   --light-text: var(--dark-text);
   --light-border: var(--dark-border);
