@@ -20,7 +20,7 @@ def get_rss(links, name):
         else:
             allStuff += '<li class="collection-header"><h6>{}</h6></li>\n'.format(d.feed.title)
         for post in d.entries:
-            allStuff += '<li class="collection-item truncate"><a href="{}">{}</a></li>\n'.format(post.link, post.title)
+            allStuff += '<li class="collection-item truncate"><a href="{}" target="_blank">{}</a></li>\n'.format(post.link, post.title)
             if limit == 10:
                 break
             limit+=1
