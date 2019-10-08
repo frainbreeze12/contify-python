@@ -1,18 +1,16 @@
 from flask import Flask
 from flask import render_template
 from flask import Markup
-from main import do_magic
 from rss_links import rss_links
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-do_magic()
 rss_links()
 
 @app.route('/')
 def index():
-    return render_template("summary.html")
+    return render_template("home.html")
 
 @app.route('/economy')
 def wirtschaft():
