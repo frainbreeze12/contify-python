@@ -1,5 +1,5 @@
 :root{
-  /* Light Theme */
+/*** Light Theme ***/
   --site-bg: #f5f5f5;
   --nav-footer: #1976d2;
   --light-link-text: #039be5;
@@ -9,7 +9,10 @@
   --light-text: black;
   --light-border: 1px solid #eeeeee;
 
-  /* Dark Theme */
+  --light-robot: #1976d2;
+  --black: #000000;
+
+/*** Dark Theme ***/
   --dark-site-bg: #1A1C20;
   --dark-nav-footer: #141414;
   --dark-link-text: #b2b6b9;
@@ -18,6 +21,10 @@
   --dark-panel-bg: #25282e;
   --dark-text: #b2b6b9;
   --dark-border: 1px solid #191919;
+
+  --dark-robot: #ffffff;
+  --oops-text: #D9DADA;
+  --white: #FFFFFF;
 }
 
 body {
@@ -88,6 +95,138 @@ ul.collection{
   color: var(--light-link-text-hover);
 }
 
+/*** 404 Robot  ***/
+.st0 {
+  fill: var(--light-robot);
+}
+.page-404{
+  color: var(--black);
+}
+
+.page-404 p {
+  font-size: 18px;
+  line-height: 30px;
+}
+.page-404 a {
+  color: #b2b6b9;
+}
+.page-404 a:hover{
+  color: #D9DADA;
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
+  overflow: visible !important;
+}
+svg #robot_1_ {
+  animation-name: verticalAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+svg #light_1_ {
+  animation-name: blinkLight;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: steps(2);
+}
+svg #leftEye_1_, svg #rightEye_1_ {
+  animation-name: blinkEye;
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  transform-origin: 50% 50%;
+}
+svg #leftArm_1_ {
+  animation-name: moveLeftArm;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  transform-origin: 50% 10%;
+  transition: all;
+}
+svg #rightArm_1_ {
+  animation-name: moveRightArm;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  transform-origin: 50% 10%;
+}
+svg #shadow_1_ {
+  animation-name: shadowAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  transform-origin: 50%;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(120deg);
+  }
+  100% {
+    transform: rotate(170deg);
+  }
+}
+@keyframes moveLeftArm {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(4deg);
+  }
+}
+@keyframes moveRightArm {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+@keyframes shadowAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0.6;
+  }
+}
+@keyframes verticalAnimation {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+@keyframes blinkLight {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blinkEye {
+  0% {
+    transform: scaleY(0);
+  }
+  4% {
+    transform: scaleY(1);
+  }
+}
+
+/*** Theme Switch ***/
 [data-theme="dark"]{
   --site-bg: var(--dark-site-bg);
   --nav-footer: var(--dark-nav-footer);
@@ -97,4 +236,7 @@ ul.collection{
   --light-panel-bg: var(--dark-panel-bg);
   --light-text: var(--dark-text);
   --light-border: var(--dark-border);
+
+  --light-robot: var(--dark-robot);
+  --black: var(--white)
 }
