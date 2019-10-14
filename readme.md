@@ -2,10 +2,14 @@
 Contify is a content aggregator for news, subreddits and more. 
 
 ## To do
-* Startseite hinzufügen
+* Landingpage
+  * link github to that
 * **More Content needed**
+  * Webcomics?
+  * ...
 * ~~Wirtschaft, Politik und Technologie füllen~~
-* Analytics
+* ~~Analytics~~
+* better dark theme? 
 * ...
 
 ## Installation
@@ -15,7 +19,7 @@ To get your developemnt env up and running you simply need to do the following s
 git clone <this repo>
 
 virtualenv env
-source env\Scripts\activate
+source env\Scripts\activate (if using windows remove the source)
 pip install -r requirements.txt
 
 set FLASK_APP=server.py
