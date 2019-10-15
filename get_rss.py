@@ -16,9 +16,9 @@ def get_rss(links, name):
 
         allStuff += '<div class="col s12 m6 xl4">\n<ul class="collection with-header z-depth-1 hoverable">\n'
         if(d.feed.title == ""):
-            allStuff += '<li class="collection-header"><h6>WirtschaftsWoche</h6></li>\n'
+            allStuff += '<li class="collection-header"><h6><a href="{}">WirtschaftsWoche</a></h6></li>\n'.format(d.feed.link)
         else:
-            allStuff += '<li class="collection-header"><h6>{}</h6></li>\n'.format(d.feed.title)
+            allStuff += '<li class="collection-header"><h6><a href="{}">{}</a></h6></li>\n'.format(d.feed.link ,d.feed.title)
         for post in d.entries:
             allStuff += '<li class="collection-item truncate"><a href="{}" target="_blank">{}</a></li>\n'.format(post.link, post.title)
             if limit == 10:

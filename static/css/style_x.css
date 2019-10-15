@@ -83,15 +83,15 @@ ul.collection{
   height: 44px;
 }
 
-.collection-item a{
+main a{
   color: var(--light-link-text);
 }
 
-.collection-item a:visited{
+main .collection-item a:visited{
   color: var(--light-link-text-visited);
 }
 
-.collection-item a:hover{
+main a:hover{
   color: var(--light-link-text-hover);
 }
 
@@ -106,12 +106,6 @@ ul.collection{
 .page-404 p {
   font-size: 18px;
   line-height: 30px;
-}
-.page-404 a {
-  color: #b2b6b9;
-}
-.page-404 a:hover{
-  color: #D9DADA;
 }
 
 svg {
