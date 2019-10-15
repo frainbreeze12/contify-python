@@ -3,6 +3,9 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 
 def rss_links():
+    home_links      = ("http://www.makronom.de/feed", "https://www.n-tv.de/politik/rss", "https://www.heise.de/security/rss/news-atom.xml",
+                       "https://www.security-insider.de/rss/news.xml", "http://www.reddit.com/r/popular/.rss")
+
     economy_links   = ("http://www.makronom.de/feed", "https://www.gruenderszene.de/feed", "https://www.wiwo.de/contentexport/feed/rss/schlagzeilen",
                        "https://www.businessinsider.de/rss", "https://www.handelsblatt.com/contentexport/feed/wirtschaft", "http://www.manager-magazin.de/news/index.rss")
 
@@ -24,6 +27,7 @@ def rss_links():
                        "http://www.reddit.com/r/BikiniBottomTwitter/.rss", "http://www.reddit.com/r/KidsAreFuckingStupid/.rss", "http://www.reddit.com/r/dankmemes/.rss")
 
 
+    get_rss(home_links, "home")
     get_rss(economy_links, "economy")
     get_rss(politic_links, "politics")
     get_rss(tech_links, "technology")
