@@ -3,6 +3,7 @@
 **/__pycache__
 contify.conf
 **/templates/summary.html
+**/templates/home.html
 **/templates/economy.html
 **/templates/politics.html
 **/templates/technology.html
