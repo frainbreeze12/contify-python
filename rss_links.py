@@ -26,6 +26,7 @@ def rss_links():
                        "http://www.reddit.com/r/gaming/.rss", "http://www.reddit.com/r/Bossfight/.rss", "http://www.reddit.com/r/todayilearned/.rss",
                        "http://www.reddit.com/r/BikiniBottomTwitter/.rss", "http://www.reddit.com/r/KidsAreFuckingStupid/.rss", "http://www.reddit.com/r/dankmemes/.rss")
 
+    webcomic_links  = ("http://www.toothpastefordinner.com/rss/rss.php", "https://www.comicsrss.com/rss/9to5.rss")
 
     get_rss(home_links, "home")
     get_rss(economy_links, "economy")
@@ -33,7 +34,8 @@ def rss_links():
     get_rss(tech_links, "technology")
     get_rss(security_links, "security")
     get_rss(reddit_links, "subreddit")
-
+    get_rss(webcomic_links, "webcomics")
+    
 
 sched = BackgroundScheduler()
 sched.add_job(rss_links, 'interval', minutes=30)
