@@ -10,7 +10,7 @@ def rss_links():
                        "https://www.businessinsider.de/rss", "https://www.handelsblatt.com/contentexport/feed/wirtschaft", "http://www.manager-magazin.de/news/index.rss")
 
     politic_links   = ("https://www.n-tv.de/politik/rss", "https://www.handelsblatt.com/contentexport/feed/politik", "https://www.dgb.de/@@rss?count=20&feed=9ba1995a-0fe3-11df-7728-00093d10fae2",
-                       "https://netzpolitik.org/feed")
+                       "https://netzpolitik.org/feed", "https://www.newsbusters.org/blog/feed", "https://www.politico.com/rss/politics08.xml")
 
     tech_links      = ("https://www.heise.de/rss/heise-top-atom.xml", "https://rss.golem.de/rss.php?feed=ATOM1.0", "http://www.reddit.com/r/technology/.rss",
                        "https://news.ycombinator.com/rss","https://www.wired.com/feed/rss", "http://rss.slashdot.org/Slashdot/slashdotMainatom", 
