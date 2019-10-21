@@ -9,4 +9,5 @@ contify.conf
 **/templates/technology.html
 **/templates/security.html
 **/templates/subreddit.html
+**/templates/webcomics.html
 **/resources/summary.csv
