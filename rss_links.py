@@ -26,7 +26,8 @@ def rss_links():
                        "http://www.reddit.com/r/gaming/.rss", "http://www.reddit.com/r/Bossfight/.rss", "http://www.reddit.com/r/todayilearned/.rss",
                        "http://www.reddit.com/r/BikiniBottomTwitter/.rss", "http://www.reddit.com/r/KidsAreFuckingStupid/.rss", "http://www.reddit.com/r/dankmemes/.rss")
 
-    webcomic_links  = ("http://www.toothpastefordinner.com/rss/rss.php", "https://www.comicsrss.com/rss/9to5.rss")
+    webcomic_links  = ("http://www.toothpastefordinner.com/rss/rss.php", "https://www.comicsrss.com/rss/9to5.rss", "https://www.smbc-comics.com/comic/rss",
+                       "http://feeds.feedburner.com/oatmealfeed", "https://www.dumbingofage.com/feed/")
 
     get_rss(home_links, "home")
     get_rss(economy_links, "economy")
