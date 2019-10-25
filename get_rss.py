@@ -8,13 +8,13 @@ def get_rss(links, name):
     content = TEMPLATE
     VAR_LINKS = '{{VAR_LINKS}}'
     allStuff = ""
-    redditList = links
+    feedList = links
 
     if(name == "home"):
         allStuff += '<h4 class="center-align">Help Contify grow!</h4> <p class="center-align">Feel free to submit a new news source via a github issue! Please label them accordingly with a content label <a href="https://github.com/frainbreeze12/contify-python/issues">here</a>.</p>'
 
-    for sub in redditList:
-        d = feedparser.parse(sub)
+    for feed in feedList:
+        d = feedparser.parse(feed)
         limit = 1
 
         allStuff += '<div class="col s12 m6 xl4">\n<ul class="collection with-header z-depth-1 hoverable">\n'
