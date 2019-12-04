@@ -4,7 +4,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 def rss_links():
     home_links      = ("http://www.makronom.de/feed", "https://www.n-tv.de/politik/rss", "https://www.heise.de/security/rss/news-atom.xml",
-                       "https://www.security-insider.de/rss/news.xml", "http://www.reddit.com/r/popular/.rss")
+                       "https://www.security-insider.de/rss/news.xml", "http://www.reddit.com/r/popular/.rss", "http://www.toothpastefordinner.com/rss/rss.php")
 
     economy_links   = ("http://www.makronom.de/feed", "https://www.gruenderszene.de/feed", "https://www.wiwo.de/contentexport/feed/rss/schlagzeilen",
                        "https://www.businessinsider.de/rss", "https://www.handelsblatt.com/contentexport/feed/wirtschaft", "http://www.manager-magazin.de/news/index.rss")
@@ -23,8 +23,9 @@ def rss_links():
                        "https://www.securitymagazine.com/rss/topic/2236")
 
     reddit_links    = ("http://www.reddit.com/r/popular/.rss", "http://www.reddit.com/r/europe/.rss","http://www.reddit.com/r/hongkong/.rss", 
-                       "http://www.reddit.com/r/gaming/.rss", "http://www.reddit.com/r/Bossfight/.rss", "http://www.reddit.com/r/todayilearned/.rss",
-                       "http://www.reddit.com/r/BikiniBottomTwitter/.rss", "http://www.reddit.com/r/KidsAreFuckingStupid/.rss", "http://www.reddit.com/r/dankmemes/.rss")
+                       "https://www.reddit.com/r/AskReddit/.rss", "https://www.reddit.com/r/pathofexile/.rss", "http://www.reddit.com/r/todayilearned/.rss",
+                       "http://www.reddit.com/r/BikiniBottomTwitter/.rss", "http://www.reddit.com/r/KidsAreFuckingStupid/.rss", "http://www.reddit.com/r/gaming/.rss",
+                       "http://www.reddit.com/r/Bossfight/.rss")
 
     webcomic_links  = ("http://www.toothpastefordinner.com/rss/rss.php", "https://www.comicsrss.com/rss/9to5.rss", "https://www.smbc-comics.com/comic/rss",
                        "http://feeds.feedburner.com/oatmealfeed", "https://www.dumbingofage.com/feed/")
