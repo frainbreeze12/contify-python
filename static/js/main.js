@@ -1,3 +1,5 @@
+document.addEventListener('touchstart', onTouchStart, {passive: true});
+
 M.AutoInit();
 
 var themeSwitch = document.getElementById('themeSwitch');

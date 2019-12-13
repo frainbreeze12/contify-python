@@ -3,14 +3,15 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 
 def rss_links():
-    home_links      = ("http://www.makronom.de/feed", "https://www.n-tv.de/politik/rss", "https://www.heise.de/security/rss/news-atom.xml",
-                       "https://www.security-insider.de/rss/news.xml", "http://www.reddit.com/r/popular/.rss")
+    home_links      = ("https://www.gruenderszene.de/feed",  "https://www.n-tv.de/politik/rss", "https://www.heise.de/security/rss/news-atom.xml",
+                       "https://www.security-insider.de/rss/news.xml", "http://www.reddit.com/r/popular/.rss", "http://www.toothpastefordinner.com/rss/rss.php")
 
-    economy_links   = ("http://www.makronom.de/feed", "https://www.gruenderszene.de/feed", "https://www.wiwo.de/contentexport/feed/rss/schlagzeilen",
-                       "https://www.businessinsider.de/rss", "https://www.handelsblatt.com/contentexport/feed/wirtschaft", "http://www.manager-magazin.de/news/index.rss")
+    economy_links   = ("https://www.gruenderszene.de/feed", "https://www.wiwo.de/contentexport/feed/rss/schlagzeilen","http://www.manager-magazin.de/news/index.rss",
+                       "https://www.businessinsider.de/rss", "https://www.handelsblatt.com/contentexport/feed/wirtschaft")
 
-    politic_links   = ("https://www.n-tv.de/politik/rss", "https://www.handelsblatt.com/contentexport/feed/politik", "https://www.dgb.de/@@rss?count=20&feed=9ba1995a-0fe3-11df-7728-00093d10fae2",
-                       "https://netzpolitik.org/feed", "https://www.newsbusters.org/blog/feed", "https://www.politico.com/rss/politics08.xml")
+    politic_links   = ("https://www.bundesregierung.de/service/rss/breg-de/1151242/feed.xml", "http://www.europarl.europa.eu/rss/doc/press-news/en.xml", "https://www.dgb.de/@@rss?count=20&feed=9ba1995a-0fe3-11df-7728-00093d10fae2",
+                       "https://netzpolitik.org/feed", "https://www.newsbusters.org/blog/feed", "https://www.politico.com/rss/politics08.xml",
+                       "https://www.n-tv.de/politik/rss", "https://www.die-partei.de/feed/", "https://www.handelsblatt.com/contentexport/feed/politik")
 
     tech_links      = ("https://www.heise.de/rss/heise-top-atom.xml", "https://rss.golem.de/rss.php?feed=ATOM1.0", "http://www.reddit.com/r/technology/.rss",
                        "https://news.ycombinator.com/rss","https://www.wired.com/feed/rss", "http://rss.slashdot.org/Slashdot/slashdotMainatom", 
@@ -23,11 +24,11 @@ def rss_links():
                        "https://www.securitymagazine.com/rss/topic/2236")
 
     reddit_links    = ("http://www.reddit.com/r/popular/.rss", "http://www.reddit.com/r/europe/.rss","http://www.reddit.com/r/hongkong/.rss", 
-                       "http://www.reddit.com/r/gaming/.rss", "http://www.reddit.com/r/Bossfight/.rss", "http://www.reddit.com/r/todayilearned/.rss",
-                       "http://www.reddit.com/r/BikiniBottomTwitter/.rss", "http://www.reddit.com/r/KidsAreFuckingStupid/.rss", "http://www.reddit.com/r/dankmemes/.rss")
+                       "https://www.reddit.com/r/AskReddit/.rss", "https://www.reddit.com/r/pathofexile/.rss", "http://www.reddit.com/r/todayilearned/.rss",
+                       "http://www.reddit.com/r/BikiniBottomTwitter/.rss", "http://www.reddit.com/r/KidsAreFuckingStupid/.rss", "http://www.reddit.com/r/gaming/.rss")
 
-    webcomic_links  = ("http://www.toothpastefordinner.com/rss/rss.php", "https://www.comicsrss.com/rss/9to5.rss", "https://www.smbc-comics.com/comic/rss",
-                       "http://feeds.feedburner.com/oatmealfeed", "https://www.dumbingofage.com/feed/")
+    webcomic_links  = ("http://www.toothpastefordinner.com/rss/rss.php", "http://feeds.feedburner.com/oatmealfeed", "https://thepunchlineismachismo.com/feed",
+                       "https://www.smbc-comics.com/comic/rss", "https://www.dumbingofage.com/feed/", "https://www.comicsrss.com/rss/9to5.rss")
 
     get_rss(home_links, "home")
     get_rss(economy_links, "economy")
