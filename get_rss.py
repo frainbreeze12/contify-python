@@ -9,6 +9,9 @@ def get_rss(links, name):
     VAR_LINKS = '{{VAR_LINKS}}'
     allStuff = ""
     feedList = links
+    log = ""
+
+    log += "Currently fetching from: {}<br>\n".format(name)
 
     if(name == "home"):
         allStuff += '<h4 class="center-align">Help Contify grow!</h4> <p class="center-align">Feel free to submit a new news source via a github issue! Please label them accordingly with a content label here: <a href="https://github.com/frainbreeze12/contify-python/issues" aria-label="Link to GitHub issues" rel="noopener">GitHub issues</a>.</p>'
@@ -17,12 +20,17 @@ def get_rss(links, name):
         d = feedparser.parse(feed)
         limit = 1
 
-        if(d.status == 521):
+        if(d.status != 200 and d.status != 301):
             print("{} is currently dead".format(feed))
-        else:
+            log += "{} is currently dead<br>\n".format(feed)
+        elif(d.status == 301):
+            print("{} is redirected".format(feed))
+            log += "{} is redirected<br>\n".format(feed)
+        elif (d.status == 200):
             allStuff += '<div class="col s12 m6 xl4">\n<ul class="collection with-header z-depth-1 hoverable">\n'
 
             print("fetching feed from: {}".format(feed))
+            log += "fetching feed from: {}<br>\n".format(feed)
 
             if(d.feed.title == ""):
                 allStuff += '<li class="collection-header"><h6><a href="{}" rel="noopener">WirtschaftsWoche</a></h6></li>\n'.format(d.feed.link)
@@ -40,3 +48,10 @@ def get_rss(links, name):
     with open('templates/{}.html'.format(name), "w", encoding='utf-8') as sr:
         print("{}.rss successful".format(name))
         sr.write(content)
+
+    if(name == "home"):
+        with open('templates/status.html', "w", encoding='utf-8') as st:
+            st.write(log)
+    else:
+        with open('templates/status.html', "a", encoding='utf-8') as st:
+            st.write(log)
