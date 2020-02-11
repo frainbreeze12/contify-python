@@ -10,4 +10,4 @@ contify.conf
 **/templates/security.html
 **/templates/subreddit.html
 **/templates/webcomics.html
-**/resources/summary.csv
+**/templates/status.html
