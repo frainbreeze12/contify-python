@@ -14,6 +14,21 @@ def index():
     return render_template("home.html")
 
 
+@app.route('/finance')
+def finance():
+    return render_template("finance.html")
+
+
+@app.route('/gaming')
+def gaming():
+    return render_template("gaming.html")
+
+
+@app.route('/memes')
+def memes():
+    return render_template("memes.html")
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
