@@ -13,9 +13,6 @@ def get_rss(links, name):
 
     log += "Currently fetching from: {}<br>\n".format(name)
 
-    if(name == "home"):
-        allStuff += '<h4 class="center-align">Help Contify grow!</h4> <p class="center-align">Feel free to submit a new news source via a github issue! Please label them accordingly with a content label here: <a href="https://github.com/frainbreeze12/contify-python/issues" aria-label="Link to GitHub issues" rel="noopener">GitHub issues</a>.</p>'
-
     for feed in feedList:
         d = feedparser.parse(feed)
         limit = 1
@@ -32,10 +29,8 @@ def get_rss(links, name):
             print("fetching feed from: {}".format(feed))
             log += "fetching feed from: {}<br>\n".format(feed)
 
-            if(d.feed.title == ""):
-                allStuff += '<li class="collection-header"><h6><a href="{}" rel="noopener">WirtschaftsWoche</a></h6></li>\n'.format(d.feed.link)
-            else:
-                allStuff += '<li class="collection-header"><h6><a href="{}" rel="noopener">{}</a></h6></li>\n'.format(d.feed.link ,d.feed.title)
+            allStuff += '<li class="collection-header"><h6><a href="{}" rel="noopener">{}</a></h6></li>\n'.format(d.feed.link ,d.feed.title)
+            
             for post in d.entries:
                 allStuff += '<li class="collection-item"><a href="{}" target="_blank" rel="noopener" class="truncate">{}</a></li>\n'.format(post.link, post.title)
                 if limit == 10:

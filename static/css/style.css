@@ -1,30 +1,13 @@
 :root{
-/*** Light Theme ***/
-  --site-bg: #f5f5f5;
-  --nav-footer: #1976d2;
-  --light-link-text: #039be5;
-  --light-link-text-hover: #90caf9;
-  --light-link-text-visited: #a8d6fa;
-  --light-panel-bg: #FFFFFF;
-  --light-text: black;
-  --light-border: 1px solid #eeeeee;
-
-  --light-robot: #1976d2;
-  --black: #000000;
-
 /*** Dark Theme ***/
-  --dark-site-bg: #1A1C20;
-  --dark-nav-footer: #141414;
-  --dark-link-text: #b2b6b9;
-  --dark-link-text-hover: #D9DADA;
-  --dark-link-text-visited: #4c5053;
-  --dark-panel-bg: #25282e;
-  --dark-text: #f5f5f5;
-  --dark-border: 1px solid #191919;
-
-  --dark-robot: #ffffff;
-  --oops-text: #D9DADA;
-  --white: #FFFFFF;
+  --site-bg: #1A1C20;
+  --nav-footer: #141414;
+  --link-text: #b2b6b9;
+  --link-text-hover: #D9DADA;
+  --link-text-visited: #4c5053;
+  --panel-bg: #25282e;
+  --text: #f5f5f5;
+  --border: 1px solid #191919;
 }
 
 body {
@@ -36,7 +19,7 @@ body {
 
 main {
   flex: 1 0 auto;
-  color: var(--light-text);
+  color: var(--text);
 }
 
 .space{
@@ -57,181 +40,30 @@ footer{
   background-color: var(--nav-footer)!important;
 }
 
-.light label{
-  color: white;
-}
-
-.switch label input[type=checkbox]:checked+.lever:after {
-  background-color: #37474f !important;
-}
-.switch label input[type=checkbox]:checked+.lever {
-  background-color: #37474f !important;
-}
-
 ul.collection{
-  border: var(--light-border)!important;
+  border: var(--border)!important;
 }
 
 .collection-header{
-  background-color: var(--light-panel-bg)!important;
-  border: var(--light-border)!important;
-  color: var(--light-text);
+  background-color: var(--panel-bg)!important;
+  border: var(--border)!important;
+  color: var(--text);
 }
 
 .collection-item{
-  background-color: var(--light-panel-bg)!important;
-  border: var(--light-border)!important;
+  background-color: var(--panel-bg)!important;
+  border: var(--border)!important;
   height: 44px;
 }
 
 main a{
-  color: var(--light-link-text);
+  color: var(--link-text);
 }
 
 main .collection-item a:visited{
-  color: var(--light-link-text-visited);
+  color: var(--link-text-visited);
 }
 
 main a:hover{
-  color: var(--light-link-text-hover);
-}
-
-/*** 404 Robot  ***/
-.st0 {
-  fill: var(--light-robot);
-}
-.page-404{
-  color: var(--black);
-}
-
-.page-404 p {
-  font-size: 18px;
-  line-height: 30px;
-}
-
-svg {
-  display: block;
-  margin: 0 auto;
-  overflow: visible !important;
-}
-svg #robot_1_ {
-  animation-name: verticalAnimation;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-}
-svg #light_1_ {
-  animation-name: blinkLight;
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: steps(2);
-}
-svg #leftEye_1_, svg #rightEye_1_ {
-  animation-name: blinkEye;
-  animation-duration: 1.8s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: linear;
-  transform-origin: 50% 50%;
-}
-svg #leftArm_1_ {
-  animation-name: moveLeftArm;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-  transform-origin: 50% 10%;
-  transition: all;
-}
-svg #rightArm_1_ {
-  animation-name: moveRightArm;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-  transform-origin: 50% 10%;
-}
-svg #shadow_1_ {
-  animation-name: shadowAnimation;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-  transform-origin: 50%;
-}
-
-@keyframes wave {
-  0% {
-    transform: rotate(120deg);
-  }
-  100% {
-    transform: rotate(170deg);
-  }
-}
-@keyframes moveLeftArm {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(4deg);
-  }
-}
-@keyframes moveRightArm {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(-4deg);
-  }
-}
-@keyframes shadowAnimation {
-  0% {
-    transform: scale(1);
-    opacity: 0.4;
-  }
-  100% {
-    transform: scale(1.15);
-    opacity: 0.6;
-  }
-}
-@keyframes verticalAnimation {
-  0% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(10px);
-  }
-}
-@keyframes blinkLight {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes blinkEye {
-  0% {
-    transform: scaleY(0);
-  }
-  4% {
-    transform: scaleY(1);
-  }
-}
-
-/*** Theme Switch ***/
-[data-theme="dark"]{
-  --site-bg: var(--dark-site-bg);
-  --nav-footer: var(--dark-nav-footer);
-  --light-link-text: var(--dark-link-text);
-  --light-link-text-hover: var(--dark-link-text-hover);
-  --light-link-text-visited: var(--dark-link-text-visited);
-  --light-panel-bg: var(--dark-panel-bg);
-  --light-text: var(--dark-text);
-  --light-border: var(--dark-border);
-
-  --light-robot: var(--dark-robot);
-  --black: var(--white)
+  color: var(--link-text-hover);
 }
